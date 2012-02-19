@@ -1,9 +1,5 @@
 package com.cardgame.game;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-
 import com.cardgame.Card;
 import com.cardgame.Deck;
 
@@ -11,6 +7,7 @@ public class Game {
 
 	private final Deck deck;
 	private Tuple tuple;
+	private final GameStrategy gameStrategy;
 
 	private class Tuple {
 		private Card firstCard;
@@ -38,10 +35,12 @@ public class Game {
 			secondCard = null;
 		}
 	}
-
-	public Game() {
-		deck = new Deck();
+	
+	public Game(GameStrategy gameStrategy){
+		this.gameStrategy = gameStrategy;
+		deck = new Deck(gameStrategy.weightedValues());
 		tuple = new Tuple();
+		
 	}
 
 	public Card draw() {
@@ -59,28 +58,9 @@ public class Game {
 
 	}
 
-	private void reset() {
+	public void reset() {
 		tuple.reset();
 	}
 
-	public static void main(String[] args) throws IOException {
-
-		Game game = new Game();
-
-		BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-		String input = null;
-		do {
-			game.reset();
-			game.draw();
-			game.draw();
-
-			Result result = game.calculateResult();
-
-			System.out.println(result.print());
-
-			input = bufferedReader.readLine();
-		} while (input.equals("y"));
-
-	}
 
 }

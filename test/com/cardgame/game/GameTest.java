@@ -12,7 +12,7 @@ public class GameTest {
 	@Test
 	public void draws_cards() {
 
-		Game game = new Game();
+		Game game = new Game(new Rummy());
 		Card card = game.draw();
 
 		assertThat(card != null, is(true));

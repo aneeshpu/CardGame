@@ -4,18 +4,20 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import com.cardgame.game.WeightedValue;
+
 public final class Deck {
 
 	private final Random random = new Random();
 	private final List<Card> deck;
 
-	public Deck() {
+	public Deck(final List<WeightedValue> weightedValues) {
 
 		deck = new ArrayList<Card>() {
 			{
 				Symbol[] values = Symbol.values();
 				for (Symbol symbol : values) {
-					for (CardNumber value : CardNumber.values()) {
+					for (WeightedValue value : weightedValues) {
 						Card card = new Card(symbol, value);
 						add(card);
 					}

@@ -1,11 +1,13 @@
 package com.cardgame;
 
+import com.cardgame.game.WeightedValue;
+
 public final class Card implements Comparable<Card> {
 
 	private final Symbol symbol;
-	private final CardNumber value;
+	private final WeightedValue value;
 
-	public Card(final Symbol symbol, final CardNumber value) {
+	public Card(final Symbol symbol, final WeightedValue value) {
 		this.symbol = symbol;
 		this.value = value;
 
@@ -21,7 +23,7 @@ public final class Card implements Comparable<Card> {
 		if (this.equals(other))
 			return 0;
 
-		if (this.value.isGreaterThan(other.value))
+		if (this.value.isHigherThan(other.value))
 			return 1;
 		return -1;
 
@@ -44,9 +46,7 @@ public final class Card implements Comparable<Card> {
 		if (getClass() != obj.getClass())
 			return false;
 		Card other = (Card) obj;
-		if (value != other.value)
-			return false;
-		return true;
+		return value.equals(other.value);
 	}
 
 	public boolean higherThan(final Card other) {
