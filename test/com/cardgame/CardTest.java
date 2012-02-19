@@ -46,4 +46,12 @@ public class CardTest {
 		assertThat(twoOfDiamond.compareTo(aceOfClub) < 0, is(true));
 	}
 
+	@Test
+	public void knows_a_higher_card() {
+		Card aceOfClub = new Card(Symbol.CLUB, CardNumber.ACE);
+		Card twoOfDiamond = new Card(Symbol.DIAMOND, CardNumber.TWO);
+
+		assertThat(aceOfClub.higherThan(twoOfDiamond), is(true));
+	}
+
 }

@@ -17,7 +17,7 @@ public final class Card implements Comparable<Card> {
 	}
 
 	@Override
-	public int compareTo(Card other) {
+	public int compareTo(final Card other) {
 		if (this.equals(other))
 			return 0;
 
@@ -36,7 +36,7 @@ public final class Card implements Comparable<Card> {
 	}
 
 	@Override
-	public boolean equals(Object obj) {
+	public boolean equals(final Object obj) {
 		if (this == obj)
 			return true;
 		if (obj == null)
@@ -47,6 +47,14 @@ public final class Card implements Comparable<Card> {
 		if (value != other.value)
 			return false;
 		return true;
+	}
+
+	public boolean higherThan(final Card other) {
+		return compareTo(other) > 0;
+	}
+
+	public boolean lowerThan(final Card other) {
+		return !higherThan(other);
 	}
 
 }
