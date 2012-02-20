@@ -11,10 +11,10 @@ public final class Dealer {
 		private Card secondCard;
 
 		private void add(Card card) {
-			if (secondCardAlreadyAdded())
+			if (secondCardAlreadyPulled())
 				throw new GameOverException("You can only pull out two cards");
 
-			if (firstCard == null) {
+			if (isFirstCardNotPulled()) {
 				firstCard = card;
 				return;
 
@@ -23,7 +23,11 @@ public final class Dealer {
 			secondCard = card;
 		}
 
-		private boolean secondCardAlreadyAdded() {
+		private boolean isFirstCardNotPulled() {
+			return firstCard == null;
+		}
+
+		private boolean secondCardAlreadyPulled() {
 			return secondCard != null;
 		}
 
