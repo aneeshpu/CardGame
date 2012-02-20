@@ -1,6 +1,5 @@
 package com.cardgame.domain;
 
-
 final class Card implements Comparable<Card> {
 
 	private final Symbol symbol;
@@ -12,9 +11,12 @@ final class Card implements Comparable<Card> {
 
 	}
 
-	@Override
-	public String toString() {
-		return String.format("%s of %s", symbol, value);
+	public boolean higherThan(final Card other) {
+		return compareTo(other) > 0;
+	}
+
+	public boolean lowerThan(final Card other) {
+		return !higherThan(other);
 	}
 
 	@Override
@@ -48,12 +50,8 @@ final class Card implements Comparable<Card> {
 		return value.equals(other.value);
 	}
 
-	public boolean higherThan(final Card other) {
-		return compareTo(other) > 0;
+	@Override
+	public String toString() {
+		return String.format("%s of %s", symbol, value);
 	}
-
-	public boolean lowerThan(final Card other) {
-		return !higherThan(other);
-	}
-
 }

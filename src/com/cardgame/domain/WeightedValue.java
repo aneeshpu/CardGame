@@ -1,22 +1,20 @@
 package com.cardgame.domain;
 
-
-
-public class WeightedValue {
+public final class WeightedValue {
 
 	private final CardNumber cardNumber;
 	private final int weight;
 
-	public WeightedValue(CardNumber cardNumber, int weight) {
+	public WeightedValue(final CardNumber cardNumber, final int weight) {
 		this.cardNumber = cardNumber;
 		this.weight = weight;
 	}
 
-	public boolean isHigherThan(WeightedValue value) {
+	public boolean isHigherThan(final WeightedValue value) {
 		return weight > value.weight;
 	}
 
-	public String toString(){
+	public String toString() {
 		return cardNumber.toString();
 	}
 
@@ -44,6 +42,5 @@ public class WeightedValue {
 			return false;
 		return true;
 	}
-	
-	
+
 }
