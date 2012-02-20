@@ -17,7 +17,7 @@ class BootStrap {
 		
 
 		final BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-		String input = null;
+		String input;
 		do {
 			game.reset();
 			game.draw();
