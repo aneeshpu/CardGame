@@ -1,14 +1,19 @@
-package com.cardgame.game;
+package com.cardgame;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class BootStrap {
+import com.cardgame.domain.Dealer;
+import com.cardgame.domain.Deck;
+import com.cardgame.domain.Result;
+import com.cardgame.game.Rummy;
+
+class BootStrap {
 
 	public static void main(String[] args) throws IOException {
 
-		Game game = new Game(new Rummy());
+		Dealer game = new Dealer(new Deck(new Rummy().weightedValues()));
 		
 
 		BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));

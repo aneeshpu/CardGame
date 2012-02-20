@@ -1,10 +1,9 @@
-package com.cardgame;
+package com.cardgame.domain;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import com.cardgame.game.WeightedValue;
 
 public final class Deck {
 

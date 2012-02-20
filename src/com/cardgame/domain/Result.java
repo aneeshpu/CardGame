@@ -1,6 +1,5 @@
-package com.cardgame.game;
+package com.cardgame.domain;
 
-import com.cardgame.Card;
 
 public class Result {
 

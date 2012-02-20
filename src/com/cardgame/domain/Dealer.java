@@ -1,13 +1,10 @@
-package com.cardgame.game;
+package com.cardgame.domain;
 
-import com.cardgame.Card;
-import com.cardgame.Deck;
 
-public class Game {
+public final class Dealer {
 
 	private final Deck deck;
 	private Tuple tuple;
-	private final GameStrategy gameStrategy;
 
 	private class Tuple {
 		private Card firstCard;
@@ -15,7 +12,7 @@ public class Game {
 
 		private void add(Card card) {
 			if (secondCardAlreadyAdded())
-				throw new GameAlreadyOverException("You can only pull out two cards");
+				throw new GameOverException("You can only pull out two cards");
 
 			if (firstCard == null) {
 				firstCard = card;
@@ -35,22 +32,21 @@ public class Game {
 			secondCard = null;
 		}
 	}
-	
-	public Game(GameStrategy gameStrategy){
-		this.gameStrategy = gameStrategy;
-		deck = new Deck(gameStrategy.weightedValues());
+
+	public Dealer(Deck deck) {
+		this.deck = deck;
 		tuple = new Tuple();
-		
+
 	}
 
-	public Card draw() {
+	public final Card draw() {
 
 		Card randomCard = deck.randomCard();
 		tuple.add(randomCard);
 		return randomCard;
 	}
 
-	public Result calculateResult() {
+	public final Result calculateResult() {
 		Card winner = tuple.firstCard.higherThan(tuple.secondCard) ? tuple.firstCard : tuple.secondCard;
 		Card loser = tuple.firstCard.lowerThan(tuple.secondCard) ? tuple.firstCard : tuple.secondCard;
 
@@ -58,9 +54,7 @@ public class Game {
 
 	}
 
-	public void reset() {
+	public final void reset() {
 		tuple.reset();
 	}
-
-
 }

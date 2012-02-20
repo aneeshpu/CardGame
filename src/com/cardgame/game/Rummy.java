@@ -3,7 +3,8 @@ package com.cardgame.game;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.cardgame.CardNumber;
+import com.cardgame.domain.CardNumber;
+import com.cardgame.domain.WeightedValue;
 
 public class Rummy implements GameStrategy{
 

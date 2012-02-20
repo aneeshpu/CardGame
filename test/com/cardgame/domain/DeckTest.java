@@ -1,10 +1,12 @@
-package com.cardgame;
+package com.cardgame.domain;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
 import org.junit.Test;
 
+import com.cardgame.domain.Card;
+import com.cardgame.domain.Deck;
 import com.cardgame.game.Rummy;
 
 public class DeckTest {

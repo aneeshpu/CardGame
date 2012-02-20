@@ -1,6 +1,6 @@
-package com.cardgame.game;
+package com.cardgame.domain;
 
-import com.cardgame.CardNumber;
+
 
 public class WeightedValue {
 

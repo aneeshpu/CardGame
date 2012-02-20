@@ -1,8 +1,7 @@
-package com.cardgame;
+package com.cardgame.domain;
 
-import com.cardgame.game.WeightedValue;
 
-public final class Card implements Comparable<Card> {
+final class Card implements Comparable<Card> {
 
 	private final Symbol symbol;
 	private final WeightedValue value;

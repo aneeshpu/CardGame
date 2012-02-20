@@ -1,11 +1,16 @@
-package com.cardgame;
+package com.cardgame.domain;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
 import org.junit.Test;
 
-import com.cardgame.game.WeightedValue;
+import com.cardgame.domain.Card;
+import com.cardgame.domain.CardNumber;
+import com.cardgame.domain.Symbol;
+import com.cardgame.domain.WeightedValue;
+
+
 
 public class CardTest {
 

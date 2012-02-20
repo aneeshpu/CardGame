@@ -1,4 +1,4 @@
-package com.cardgame;
+package com.cardgame.domain;
 
 public enum CardNumber {
 	JACK, KING, QUEEN, ACE, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN;

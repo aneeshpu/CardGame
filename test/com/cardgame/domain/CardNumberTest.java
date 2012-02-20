@@ -1,8 +1,12 @@
-package com.cardgame;
+package com.cardgame.domain;
 
 import static org.hamcrest.core.Is.is;
 
 import org.junit.Test;
+
+import com.cardgame.domain.CardNumber;
+
+
 import static org.junit.Assert.*;
 
 public class CardNumberTest {
