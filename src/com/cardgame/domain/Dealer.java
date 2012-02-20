@@ -42,22 +42,22 @@ public final class Dealer {
 
 	}
 
-	public final Card draw() {
+	public Card draw() {
 
-		Card randomCard = deck.randomCard();
+		final Card randomCard = deck.randomCard();
 		tuple.add(randomCard);
 		return randomCard;
 	}
 
-	public final Result calculateResult() {
-		Card winner = tuple.firstCard.higherThan(tuple.secondCard) ? tuple.firstCard : tuple.secondCard;
-		Card loser = tuple.firstCard.lowerThan(tuple.secondCard) ? tuple.firstCard : tuple.secondCard;
+	public Result calculateResult() {
+		final Card winner = tuple.firstCard.higherThan(tuple.secondCard) ? tuple.firstCard : tuple.secondCard;
+		final Card loser = tuple.firstCard.lowerThan(tuple.secondCard) ? tuple.firstCard : tuple.secondCard;
 
 		return new Result(winner, loser);
 
 	}
 
-	public final void reset() {
+	public void reset() {
 		tuple.reset();
 	}
 }
