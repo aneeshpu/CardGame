@@ -1,12 +1,11 @@
 package com.cardgame.domain;
 
-
 public final class Dealer {
 
 	private final Deck deck;
-	private Tuple tuple;
+	private final Tuple tuple;
 
-	private class Tuple {
+	private final class Tuple {
 		private Card firstCard;
 		private Card secondCard;
 

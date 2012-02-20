@@ -1,12 +1,12 @@
 package com.cardgame.domain;
 
 
-public class Result {
+public final class Result {
 
 	private final Card winner;
 	private final Card loser;
 
-	public Result(Card winner, Card loser) {
+	public Result(final Card winner, final Card loser) {
 		this.winner = winner;
 		this.loser = loser;
 	}
